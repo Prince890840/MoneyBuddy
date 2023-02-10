@@ -1,6 +1,4 @@
 * {
-  margin: 0;
-  background-color: #fff6e6;
   --navbar-item-color: #706757;
   --body-background-color: #ffecc4;
   --navbar-login-button-background-color: #c5b1ff;
@@ -11,16 +9,18 @@
 *,
 *::after,
 *::before {
+  background-color: #fff6e6;
   box-sizing: border-box;
+  margin: 0;
 }
 
 .wrapper {
-  width: 1440px;
+  max-width: 1134px;
+  margin: 0 auto;
 }
 
 header {
   width: 100%;
-  margin-bottom: 170px;
 }
 
 nav {
@@ -29,7 +29,7 @@ nav {
   align-items: center;
   width: 1134px;
   top: 0;
-  padding: 36px 0;
+  padding: 40px 0px 30px 0px;
   z-index: 100;
   transition: all 500ms ease;
   position: relative;
@@ -49,7 +49,7 @@ nav .logo {
 nav ul {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 36px;
   list-style: none;
   margin: 0;
   z-index: 500;
@@ -82,19 +82,19 @@ nav ul li a {
   box-shadow: 10px 10px 5px 0px #37246f;
 }
 
-header .body-main-content {
+section .body-main-content {
   width: 100%;
   font-family: var(--body-content-font-family);
   font-style: normal;
   font-weight: 700;
   font-size: 64px;
-  /* line-height: 102px; */
+  line-height: 102px;
   text-align: center;
   letter-spacing: -0.055em;
   color: #333028;
 }
 
-header .money-symbol {
+section .money-symbol {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -138,14 +138,14 @@ header .money-symbol {
   z-index: 999;
 }
 
-header form {
+section form {
   position: relative;
   -webkit-box-shadow: 10px 10px 5px 0px #37246f;
   -moz-box-shadow: 10px 10px 5px 0px #37246f;
   box-shadow: 10px 10px 5px 0px #37246f;
 }
 
-header form input {
+section form input {
   font-family: var(--body-content-font-family);
   font-weight: normal;
   font-size: 16px;
@@ -153,12 +153,11 @@ header form input {
   padding: 8px 160px 8px 32px;
   border: none;
   width: 100%;
-
   background: #fffdfa;
   border: 1px solid #928672;
 }
 
-header form .submit-btn {
+section form .submit-btn {
   position: absolute;
   right: 0px;
   top: 50%;
@@ -186,6 +185,15 @@ header form .submit-btn {
 
 .hero-section .right-group {
   flex: 1;
+}
+
+.hero-section .middle-group .investors-partner-section {
+  width: 100%;
+}
+
+.investors-partner-section nav img {
+  width: 100%;
+  height: 100%;
 }
 
 .hero-section .middle-group .investors-partner-section p {
@@ -223,7 +231,6 @@ header form .submit-btn {
 }
 
 .hero-section .middle-group .page-label-section p {
-  width: 164px;
   font-family: var(--navbar-item-font-family);
   font-style: normal;
   font-weight: 500;
@@ -236,39 +243,40 @@ header form .submit-btn {
   flex-grow: 0;
 }
 
-footer {
-  margin-top: -200px;
+.box-container {
+  margin-top: -70px;
   background: linear-gradient(
     180deg,
     rgba(255, 234, 197, 0.84) 0%,
     rgba(255, 255, 255, 0.84) 100%
   );
   backdrop-filter: blur(62px);
-  padding: 70px 0;
+  padding: 70px 137px;
   width: 100%;
 }
 
-footer .box-container {
+.box-container .inner-wrapper {
+  max-width: 1134px;
+  margin: 0 auto;
+}
+
+.box-container .inner-wrapper .boxes {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 28px;
 }
 
-footer .box-container.footer-wrapper {
-  max-width: 1134px;
-  margin: 0 auto;
-}
-
-footer .box {
+.box-container .inner-wrapper .boxes .box {
   background: rgba(255, 255, 255, 0.47);
   border: 1px solid #c8bba3;
   backdrop-filter: blur(18.5px);
   box-sizing: border-box;
   width: 279px;
+  flex: 1;
 }
 
-footer .box h1 {
+.box-container .inner-wrapper .boxes .box h1 {
   padding: 26px 43px 0px 43px;
   font-family: var(--body-content-font-family);
   font-weight: 700;
@@ -277,7 +285,7 @@ footer .box h1 {
   color: rgb(51, 48, 40);
 }
 
-footer .box p {
+.box-container .inner-wrapper .boxes .box p {
   white-space: nowrap;
   padding: 0px 55px 28px 55px;
   font-family: var(--body-content-font-family);
@@ -287,11 +295,6 @@ footer .box p {
   text-align: center;
 }
 
-.wrapper {
-  max-width: 1134px;
-  margin: 0 auto;
-}
-
 nav.mobile-nav,
 .mobile-navbar-container {
   display: none;
@@ -299,7 +302,8 @@ nav.mobile-nav,
 
 @media (max-width: 1100px) {
   .wrapper {
-    padding: 0px 100px;
+    padding: 0px 100px 0px 150px;
+    max-width: 1400px;
   }
 
   #mobile-btn {
@@ -324,8 +328,8 @@ nav.mobile-nav,
     padding: 40px 10px;
   }
 
-  header .body-main-content {
-    font-size: 70px;
+  section .body-main-content {
+    font-size: 45px;
   }
 
   .content {
@@ -365,12 +369,46 @@ nav.mobile-nav,
     order: 3;
   }
 
-  footer {
-    width: 1135px;
+  .investors-partner-section nav img {
+    width: 20%;
+    height: 15%;
+  }
+
+  .hero-section .middle-group .investors-partner-section nav {
+    gap: 100px;
+    width: 100%;
+  }
+
+  .hero-section .middle-group .page-label-section img {
+    width: 12%;
+    height: 15%;
+    margin-right: 15px;
+  }
+
+  .hero-section .middle-group .page-label-section p {
+    font-size: 30px;
+  }
+
+  .box-container {
+    padding: 60px 240px;
+  }
+
+  .box-container .inner-wrapper .boxes {
+    flex-wrap: wrap;
+    column-gap: 5px;
   }
 }
 
 @media (max-width: 800px) {
+  .wrapper {
+    padding: 0px 25px 0px 25px;
+    max-width: 1400px;
+  }
+
+  .content {
+    font-size: 25px;
+  }
+
   nav {
     display: none;
   }
@@ -423,8 +461,8 @@ nav.mobile-nav,
 
   .mobile-navbar-container .close-icon {
     position: fixed;
-    top: 34px;
-    right: 110px;
+    top: 35px;
+    right: 35px;
     opacity: 0;
     pointer-events: none;
     /* it's can't be click */
@@ -453,16 +491,22 @@ nav.mobile-nav,
     background: none;
   }
 
-  footer {
-    width: 1200px;
-  }
-
-  footer .box p {
-    font-size: 14px;
+  .box-container {
+    width: auto;
   }
 }
 
 @media (max-width: 700px) {
+  .wrapper {
+    padding: 0px 35px 0px 35px;
+    width: 710px;
+  }
+
+  .hero-section .middle-group .investors-partner-section nav {
+    gap: 30px;
+    width: 100%;
+  }
+
   nav.mobile-nav {
     padding: 32px;
   }
@@ -474,16 +518,14 @@ nav.mobile-nav,
 
   .hero-section .left-group img {
     z-index: 0;
+    margin-left: 10%;
   }
 
   .hero-section .right-group img {
+    margin-left: 10%;
     right: 98px;
     bottom: 35px;
     z-index: 0;
-  }
-
-  footer .box p {
-    font-size: 14px;
   }
 
   #mobile-btn {
@@ -499,5 +541,23 @@ nav.mobile-nav,
     -webkit-box-shadow: 10px 10px 5px 0px #37246f;
     -moz-box-shadow: 10px 10px 5px 0px #37246f;
     box-shadow: 10px 10px 5px 0px #37246f;
+  }
+
+  .mobile-navbar-container .close-icon {
+    right: 84px;
+    top: 30px;
+  }
+
+  .box-container {
+    width: 780px;
+  }
+
+  .box-container .inner-wrapper {
+    width: auto;
+  }
+
+  .box-container .inner-wrapper .boxes {
+    justify-content: center;
+    align-items: center;
   }
 }
